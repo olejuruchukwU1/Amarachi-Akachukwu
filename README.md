@@ -24,8 +24,8 @@ leave the 'megablast' option selected.
 click on the 'BLAST' button.
 Download the Hit Table after the BLAST has completed.
 Column I and J have the start and end mapping positions in the reference genome.
-#Functional annotation of genomes
-##Automatic annotation of bacterial genomes
+# Functional annotation of genomes
+## Automatic annotation of bacterial genomes
 In the Galaxy platform,use the upload tool to upload the genome assembly file campylo.fas,in the Type menu,select 'fasta' format and click start
 Find Augustus in the tools panel.
 In the Genome sequence menu, select the uploaded genpme
@@ -39,7 +39,7 @@ In pattern write ^#
 Execute
 Copy the sequence of the first annotated gene from August output file Coding sequence.
 BLAST this in the NCBI  Nucleotide BLAST page.
-##Gene expression analysis:measuring transcripts levels with RNA-Seq.
+## Gene expression analysis:measuring transcripts levels with RNA-Seq.
 Open the public repository Sequence Read Archive (SRA).
 Find the dataset ERR036499.<
 In the Galaxy webpage,find and open the tool Download and Extract Reads in FASTA/Q.
@@ -50,7 +50,7 @@ In the will you select a reference option select Use a genome from history and b
 Open the program htseq-count and select the BAM file from Bowtie2.
 Select the GFF annotation file generated from Augustus;in the feature write CDS and in the ID attribute write ID.
 Execute.
-##Gene expression analysis:differential gene expression
+## Gene expression analysis:differential gene expression
 Download the file campylobacter expression.zip file.
 open the DESEQ2 tool.
 In option 1:Factor write lab. In option 1:Factor level select in the counts file(s)box samples 1 and 2
@@ -59,13 +59,13 @@ Change the name of the factor levels;Lab A and Lab B.
 Leave all the options as default and Execute.
 Open the Filter tool and runit on the output from DESeq2. The conditions to filter on are c3>2 and c7<0.01.
 Use the cut tool to select column 1.
-##Functional annotation of gene lists: Gene ontology enrichment
+## Functional annotation of gene lists: Gene ontology enrichment
 open the gene ontology browser using http://geneontology.org.
 Paste in the gene ontology windows the gene obtained from 61
 select Biological process and the species E.coli.
 Launch.
-#Genome resequencing
-##Pairwise alignment of genomes
+# Genome resequencing
+## Pairwise alignment of genomes
 Download and decompress the file 'campylo.zip'.
 open the blastn and sect the option 'Align two or more sequences'
 For the query sequence,select the extracted quey genome file (Cjejuni-query.fasta).
@@ -83,7 +83,7 @@ In the 'choose the source for the reference genome' select 'History'. Select the
 In 'Choose parameter selection level' select the option '5. Full list of options' and then in 'Population model options' select 'Set population model options'. Then change 'Set ploidy for the analysis' from 2 to 1 (haploids).
 Execute.
 Open the Sort program in Galaxy, select the output file from Freebayes. Sort the file numerically in descending order,using column 6.
-##Mapping the mutation with a genome browser
+## Mapping the mutation with a genome browser
 In a web browser , go to http://archaea.ucsc.edu/cgi-bin/hgGateway?db=campJeju.
 In the 'position or search term' field type chr: followed by the position of the SNP detected in 85.
 The browser will display one nucleotide which is where the mutation occurred. Zoom out to see the mutated gene.
