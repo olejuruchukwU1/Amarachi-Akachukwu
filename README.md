@@ -64,4 +64,27 @@ open the gene ontology browser using http://geneontology.org.
 Paste in the gene ontology windows the gene obtained from 61
 select Biological process and the species E.coli.
 Launch.
-#
+#Genome resequencing
+##Pairwise alignment of genomes
+Download and decompress the file 'campylo.zip'.
+open the blastn and sect the option 'Align two or more sequences'
+For the query sequence,select the extracted quey genome file (Cjejuni-query.fasta).
+For the subject sequence, select any of the genome files; C.jejuni. S3, C.coli,C.fetus.
+Run the BLAST
+Click and Interpret the dot plot.
+## SNP detection
+Upload the file sample_mutant.fastq.gz on Galaxy.
+Upload the C.jejuni query genome in FASTA format.
+Open Bowtie2 program.
+In the Bowtie2 option, select the uploaded FASTQ file. Change the options from 'Use a built-in index' to 'Use one from history', and selct the reference genome uploaded
+Execute.
+Open the Freebayes program.
+In the 'choose the source for the reference genome' select 'History'. Select the Campylobacter genome previously uploaded as the reference genome. Select the bam file from the Bowtie2 output.
+In 'Choose parameter selection level' select the option '5. Full list of options' and then in 'Population model options' select 'Set population model options'. Then change 'Set ploidy for the analysis' from 2 to 1 (haploids).
+Execute.
+Open the Sort program in Galaxy, select the output file from Freebayes. Sort the file numerically in descending order,using column 6.
+##Mapping the mutation with a genome browser
+In a web browser , go to http://archaea.ucsc.edu/cgi-bin/hgGateway?db=campJeju.
+In the 'position or search term' field type chr: followed by the position of the SNP detected in 85.
+The browser will display one nucleotide which is where the mutation occurred. Zoom out to see the mutated gene.
+Click on the gene name.
