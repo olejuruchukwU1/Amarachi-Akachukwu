@@ -1,4 +1,4 @@
-# Genome Assembly
+# De novo assembly of genome sequences
 ## Quality Control
 On the Galaxy panel, click on the upload data button and drag and drop the FastQ file for analysis.
 Select the FastQC program from the list of tools.
